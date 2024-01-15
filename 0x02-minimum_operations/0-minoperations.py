@@ -20,4 +20,3 @@ def minOperations(n):
             current_position += starting_point
             step_counter += 1
     return step_counter
-
