@@ -6,7 +6,7 @@
 
 def minOperations(n):
     """Min operations"""
-    if n <= 0:
+    if n <= 1 or isinstance(n, float):
         return 0
     minOp = n
     for i in range(1, round(n / 2)):
