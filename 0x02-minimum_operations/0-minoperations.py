@@ -5,11 +5,19 @@
 
 
 def minOperations(n):
-    """Min operations"""
-    if n <= 1 or isinstance(n, float):
-        return 0
-    minOp = n
-    for i in range(1, round(n / 2)):
-        if n % i == 0:
-            minOp = min(round(n / i) + i, minOp)
-    return minOp
+    """minOperations1"""
+    current_position = 1
+    starting_point = 0
+    step_counter = 0
+    while current_position < n:
+        remainder = n - current_position
+
+        if remainder % current_position == 0:
+            starting_point = current_position
+            current_position += starting_point
+            step_counter += 2
+        else:
+            current_position += starting_point
+            step_counter += 1
+    return step_counter
+
