@@ -1,9 +1,11 @@
 #!/usr/bin/python3
+"""0-states"""
 import sys
 import re
 
 
 def line_elements(line: str) -> bool:
+    """extract information from a line"""
     parts = line.split()
     if len(parts) != 9:
         return False
@@ -57,6 +59,7 @@ def print_result(total_size, status_count):
 
 
 def main():
+    """main function to execute code"""
     try:
         line_count = 0
         total_size = 0
