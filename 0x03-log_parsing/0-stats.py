@@ -17,8 +17,6 @@ if __name__ == '__main__':
 
     try:
         for line in sys.stdin:
-            if line_count % 10 == 0:
-                print_result(total_size, status_count)
             parts = line.split()
             line_count += 1
             try:
@@ -33,6 +31,8 @@ if __name__ == '__main__':
                         status_count[parts[7]] = 1
             except IndexError:
                 pass
+            if line_count % 10 == 0:
+                print_result(total_size, status_count)
         print_result(total_size, status_count)
     except KeyboardInterrupt:
         print_result(total_size, status_count)
