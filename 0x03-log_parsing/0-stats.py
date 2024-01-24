@@ -19,12 +19,18 @@ if __name__ == '__main__':
         for line in sys.stdin:
             parts = line.split()
             line_count += 1
-            total_size += int(parts[8])
-            if parts[7] in valid_codes:
-                if parts[7] in status_count:
-                    status_count[parts[7]] += 1
-                else:
-                    status_count[parts[7]] = 1
+            try:
+                total_size += int(parts[8])
+            except (IndexError, ValueError):
+                pass
+            try:
+                if parts[7] in valid_codes:
+                    if parts[7] in status_count:
+                        status_count[parts[7]] += 1
+                    else:
+                        status_count[parts[7]] = 1
+            except IndexError:
+                pass
             if line_count % 10 == 0:
                 print_result(total_size, status_count)
         print_result(total_size, status_count)
