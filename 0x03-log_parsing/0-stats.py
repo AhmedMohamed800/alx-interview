@@ -9,9 +9,10 @@ if __name__ == '__main__':
     status_count = {}
 
     def print_result(total_size, status_count):
+        """print result"""
         print("File size: {:d}".format(total_size))
         for status_code in sorted(status_count):
-            print(f"{status_code}: {status_count[status_code]}")
+            print("{}: {}".format(status_code, status_count[status_code]))
 
     try:
         for line in sys.stdin:
