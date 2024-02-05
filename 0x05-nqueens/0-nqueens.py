@@ -21,7 +21,6 @@ except ValueError:
 
 def is_valid_state(state, n):
     """check if the state is valid"""
-    # check state
     return len(state) == n
 
 
@@ -39,15 +38,14 @@ def get_candidates(state, n):
         candidates.discard(col)
         dist = position - row
 
-        candidates.discard(col+dist)
-        candidates.discard(col-dist)
+        candidates.discard(col + dist)
+        candidates.discard(col - dist)
     return candidates
 
 
 def search(state, solutions, n):
     """search through candidates"""
     if is_valid_state(state, n):
-        convert_to_2d_array(state)
         solutions.append(state.copy())
         return
 
@@ -73,4 +71,5 @@ def solveNQueen(n):
 
 
 for solution in solveNQueen(n):
+    convert_to_2d_array(solution)
     print(solution)
