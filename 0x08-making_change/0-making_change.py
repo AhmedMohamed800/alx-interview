@@ -3,7 +3,7 @@
 
 
 def min_great_than_zero(coins, total):
-    """min_great_than_zero"""
+    """"""
     min = total - coins[0]
     for coin in coins:
         coin = total - coin
@@ -13,7 +13,7 @@ def min_great_than_zero(coins, total):
 
 
 def search(steps, coins, total):
-    """DFS"""
+    """search"""
     if total < 0:
         return -1
     if total == 0:
@@ -27,5 +27,5 @@ def search(steps, coins, total):
 def makeChange(coins, total):
     """
     return the fewest number of coins needed to meet a given amount total.
-    """
-    return search(-1, coins, total)
+    """    
+    return search(0, coins, total)
